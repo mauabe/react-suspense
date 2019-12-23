@@ -39,6 +39,7 @@ return <div>
   };
 }
 
+function fetchPokemon(id){
 // 2. Rename the `pokemon` variable to `initialPokemon` to indicate that it is only the first
 let pokemon = suspensify(
   fetch(`https://pokeapi.co/api/v2/pokemon/1`).then(res => res.json())
