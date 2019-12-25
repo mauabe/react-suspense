@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 // const PokemonDetail = React.lazy(() => import('./pokemon-detail'));
 
 // ↓↓↓ 👋 Update this line to change the lesson ↓↓↓
-let lesson = "114";
+let lesson = "203";
 
 const Lesson = React.lazy(() => import(`./lessons/${lesson}/app`));
 function App() {
