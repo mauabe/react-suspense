@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 // import PokemonDetail from './pokemon-detail';
-const PokemonDetail = React.lazy(() => import('./pokemon-detail'));
+
+// const PokemonDetail = React.lazy(() => import('./pokemon-detail'));
 
 // ↓↓↓ 👋 Update this line to change the lesson ↓↓↓
-let lesson = "106";
+let lesson = "114";
 
 const Lesson = React.lazy(() => import(`./lessons/${lesson}/app`));
 function App() {
