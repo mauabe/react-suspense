@@ -1,10 +1,27 @@
 import React from "react";
+import {fetchPokemon, suspensify} from './api';
 
+let initialPokemon = suspensify(fetchPokemon(1));
 
-let pokemon = suspensify(fetchPokemon(id));
+export default function PokemonDetail() {
+  let [pokemonResource, setPokemonResource] = React.useState(initialPokemon);
+  let [startTransition] = React.useTransition({ timeoutMs: 1000 });
+  let pokemon = pokemonResource.read();
 
-export default function PokemonDetail(pokemon.read().name) {
-  // 4. `pokemon` is now a resource with a `read()` function on it
-    //  use `{pokemon.read().name}` to display the name of the first Pokemon fetched from the internet
-  return <div>Static Pokemon</div>;
+  return (
+    <div>
+      <div>{pokemon.name}</div>
+
+      <button
+        type="button"
+        onClick={() =>
+          startTransition(() =>
+            setPokemonResource(suspensify(fetchPokemon(pokemon.id + 1)))
+          )
+        }
+      >
+        Next
+      </button>
+    </div>
+  );
 }
