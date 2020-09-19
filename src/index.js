@@ -2,12 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 // import PokemonDetail from './pokemon-detail';
 
-// const PokemonDetail = React.lazy(() => import('./pokemon-detail'));
-
 // ↓↓↓ 👋 Update this line to change the lesson ↓↓↓
-let lesson = "203";
+// let lesson = "complete";
 
-const Lesson = React.lazy(() => import(`./lessons/${lesson}/app`));
+const Lesson = React.lazy(() => import(`./app`));
+// const Lesson = React.lazy(() => import(`./lessons/${lesson}/app`));
 function App() {
   return (
     <React.Suspense fallback="Loading Pokemon...">
